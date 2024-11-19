@@ -26,7 +26,7 @@ import org.springframework.context.annotation.Configuration;
         bearerFormat = "JWT",
         scheme = "bearer"
 )
-public class SpringDocConfig {
+public class SpringDocConfiguration {
     @Bean
     public GroupedOpenApi publicApi() {
         String[] publicPaths = {"/auth/**", "/doc/**", "/captcha/**"};
