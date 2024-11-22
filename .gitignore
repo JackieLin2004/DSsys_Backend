@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Test Controller ###
+/src/main/java/ynu/jackielin/dssys_backend/controller/TestController.java

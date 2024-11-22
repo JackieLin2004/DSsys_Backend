@@ -21,6 +21,7 @@ import ynu.jackielin.dssys_backend.filter.JwtAuthorizeFilter;
 import ynu.jackielin.dssys_backend.utils.JwtUtils;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * 安全配置类，用于配置 Spring Security 的核心安全功能
@@ -113,6 +114,15 @@ public class SecurityConfiguration {
     public void onLogoutSuccess(HttpServletRequest request,
                                 HttpServletResponse response,
                                 Authentication authentication) throws IOException, ServletException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter writer = response.getWriter();
+        String authorization = request.getHeader("Authorization");
+        if (jwtUtils.invalidateJwt(authorization)) {
+            writer.write(RestBean.success().asJsonString());
+        } else {
+            writer.write(RestBean.failure(400, "退出登录失败").asJsonString());
+        }
     }
 
     /**
