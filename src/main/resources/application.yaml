@@ -8,9 +8,20 @@ spring:
     password: 12345678
     driver-class-name: com.mysql.cj.jdbc.Driver
   security:
+    filter:
+      order: -100
     jwt:
       key: abcdefghijk
       expire: 7
+  mail:
+    host: smtp.163.com
+    username: linxy20040304@163.com
+    password: PXILBFPDDKSNRFAI
+  rabbitmq:
+    addresses: localhost
+    username: root
+    password: 12345678
+    virtual-host: /
 
 springdoc:
   swagger-ui:

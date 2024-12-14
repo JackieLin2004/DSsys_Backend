@@ -1,4 +1,4 @@
-package ynu.jackielin.dssys_backend.dto.response;
+package ynu.jackielin.dssys_backend.entity.vo.response;
 
 import lombok.Data;
 
