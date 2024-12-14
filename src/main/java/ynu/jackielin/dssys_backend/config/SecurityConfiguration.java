@@ -42,6 +42,9 @@ public class SecurityConfiguration {
         return http
                 .authorizeHttpRequests(conf -> conf
                         .requestMatchers(publicPaths).permitAll()
+                        .requestMatchers("/api/admin/**").hasRole("admin")
+                        .requestMatchers("/api/teacher/**").hasRole("teacher")
+                        .requestMatchers("/api/student/**").hasRole("student")
                         .anyRequest().authenticated()
                 )
                 .formLogin(conf -> conf

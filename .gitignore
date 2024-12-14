@@ -34,3 +34,6 @@ build/
 
 ### Test Controller ###
 /src/main/java/ynu/jackielin/dssys_backend/controller/TestController.java
+/src/main/java/ynu/jackielin/dssys_backend/controller/AdminTestController.java
+/src/main/java/ynu/jackielin/dssys_backend/controller/TeacherTestController.java
+/src/main/java/ynu/jackielin/dssys_backend/controller/StudentTestController.java
