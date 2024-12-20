@@ -5,10 +5,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class AuthorizeVO {
+public class TeacherVO {
     int id;
     String username;
-    String role;
-    String token;
-    Date expire;
+    String email;
+    Date registerTime;
 }

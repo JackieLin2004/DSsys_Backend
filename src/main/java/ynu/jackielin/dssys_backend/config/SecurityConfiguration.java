@@ -76,6 +76,7 @@ public class SecurityConfiguration {
         Account account = service.findAccountByUsernameOrEmail(user.getUsername());
         String token = utils.createJwt(user, account.getId(), account.getUsername());
         AuthorizeVO authorizeVO = account.asViewObject(AuthorizeVO.class, vo -> {
+            vo.setId(account.getId());
             vo.setExpire(utils.expireTime());
             vo.setToken(token);
         });
